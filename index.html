@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CampusConnect -  App</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#ffffff;
+    color:#111;
+}
+
+/* TOP DESIGN */
+.top{
+    height:120px;
+    background:
+    linear-gradient(135deg,#dcecff 25%,transparent 25%),
+    linear-gradient(45deg,#b9d9f4 25%,transparent 25%),
+    linear-gradient(135deg,#c9efd8 70%,#91d2b5 70%);
+    position:relative;
+    overflow:hidden;
+}
+
+.top-icons{
+    display:flex;
+    justify-content:center;
+    gap:70px;
+    padding-top:35px;
+    font-size:40px;
+    color:#15528b;
+}
+
+/* MAIN */
+.container{
+    width:94%;
+    max-width:1500px;
+    margin:auto;
+}
+
+/* TITLE */
+.title{
+    text-align:center;
+    margin-top:25px;
+}
+
+.title h1{
+    font-size:70px;
+    color:#07569a;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.subtitle{
+    margin-top:15px;
+    font-size:34px;
+    font-weight:bold;
+    color:#16803d;
+}
+
+.subtitle span{
+    color:#087ab1;
+}
+
+.line{
+    width:75%;
+    height:4px;
+    margin:20px auto;
+    background:linear-gradient(90deg,#35a853,#1681b5);
+}
+
+/* PROBLEM SOLUTION */
+.two-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    margin-top:25px;
+}
+
+.box{
+    min-height:255px;
+    padding:25px 35px;
+    border:2px solid #398bc2;
+    border-radius:18px;
+    background:#eef8ff;
+}
+
+.solution{
+    border-color:#3b9b68;
+    background:#effff3;
+}
+
+.box h2{
+    font-size:40px;
+    color:#07569a;
+    margin-bottom:20px;
+}
+
+.solution h2{
+    color:#14753d;
+}
+
+.box ul{
+    padding-left:25px;
+}
+
+.box li{
+    font-size:22px;
+    margin:13px 0;
+}
+
+/* SECTION TITLE */
+.section-title{
+    text-align:center;
+    color:#07569a;
+    font-size:42px;
+    font-weight:900;
+    margin:30px 0;
+}
+
+.section-title::after{
+    content:"";
+    display:block;
+    width:130px;
+    height:4px;
+    margin:10px auto;
+    background:linear-gradient(90deg,#07569a,#35a853);
+}
+
+/* FEATURES */
+.features{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+
+.feature{
+    border:2px solid #8abbdc;
+    border-radius:15px;
+    padding:25px 12px;
+    text-align:center;
+    min-height:230px;
+    background:#f7fbff;
+}
+
+.feature:nth-child(2){
+    background:#f2fff6;
+    border-color:#79b994;
+}
+
+.feature:nth-child(3){
+    background:#f8fbff;
+}
+
+.feature:nth-child(4){
+    background:#f5fbff;
+}
+
+.feature:nth-child(5){
+    background:#f4fbff;
+}
+
+.icon{
+    font-size:55px;
+    margin-bottom:18px;
+}
+
+.feature h3{
+    font-size:21px;
+    margin-bottom:12px;
+    color:#111;
+}
+
+.feature p{
+    font-size:17px;
+    line-height:1.4;
+}
+
+/* APP PREVIEW */
+.preview{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:25px;
+    margin-bottom:35px;
+}
+
+.phone{
+    height:420px;
+    border:7px solid #111;
+    border-radius:35px;
+    background:white;
+    overflow:hidden;
+    box-shadow:0 7px 15px rgba(0,0,0,.18);
+}
+
+.phone-top{
+    height:48px;
+    background:#f4f4f4;
+    text-align:center;
+    padding:15px 5px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.phone-content{
+    padding:20px 12px;
+}
+
+.search{
+    border:2px solid #d4e0ea;
+    border-radius:12px;
+    padding:10px;
+    margin-bottom:15px;
+    color:#557;
+}
+
+.item{
+    padding:12px;
+    border-radius:8px;
+    background:#e9f5ff;
+    margin:10px 0;
+    font-size:13px;
+}
+
+.green{
+    background:#d7f4df;
+}
+
+.blue{
+    background:#d9efff;
+}
+
+.map{
+    height:210px;
+    border-radius:12px;
+    background:
+    linear-gradient(25deg,transparent 45%,#83b7d2 46%,#83b7d2 49%,transparent 50%),
+    linear-gradient(150deg,transparent 45%,#8fc99d 46%,#8fc99d 50%,transparent 51%),
+    #eaf5df;
+    position:relative;
+}
+
+.map::after{
+    content:"";
+    font-size:45px;
+    position:absolute;
+    top:75px;
+    left:70px;
+}
+
+/* FOOTER */
+footer{
+    background:linear-gradient(90deg,#0589b7,#1da7c4);
+    color:white;
+    min-height:125px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:25px;
+    font-size:18px;
+}
+
+.footer-left,
+.footer-right{
+    font-weight:bold;
+}
+
+.date{
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+
+    .title h1{
+        font-size:45px;
+    }
+
+    .subtitle{
+        font-size:25px;
+    }
+
+    .two-box{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .preview{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .title h1{
+        font-size:32px;
+    }
+
+    .subtitle{
+        font-size:20px;
+    }
+
+    .features,
+    .preview{
+        grid-template-columns:1fr;
+    }
+
+    .box h2{
+        font-size:30px;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP -->
+<div class="top">
+    <div class="top-icons">
+      
+    </div>
+</div>
+
+<div class="container">
+
+<!-- TITLE -->
+<section class="title">
+
+    <h1>BUILD YOUR DREAM APP</h1>
+
+    <div class="subtitle">
+
+    <div class="line"></div>
+
+</section>
+
+
+<!-- PROBLEM + SOLUTION -->
+<section class="two-box">
+
+    <div class="box">
+
+        <h2>PROBLEM: </h2>
+
+        <ul>
+            <li>BCA students struggle with notes</li>
+            <li>Attendance & Timetable confusion</li>
+            <li>Lost items around campus</li>
+            <li>Difficulty in campus navigation</li>
+        </ul>
+
+    </div>
+
+
+    <div class="box solution">
+
+        <h2>SOLUTION: </h2>
+
+        <h3 style="font-size:25px;margin-bottom:15px;">
+            All-in-one student companion app without AI
+        </h3>
+
+        <p style="font-size:22px;line-height:1.5;">
+            Everything students need in one place,
+            simple, practical and organized.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+<h2 class="section-title">
+    KEY FEATURES
+</h2>
+
+<section class="features">
+
+    <div class="feature">
+
+        <div class="icon"></div>
+
+        <h3>Smart Notes Library</h3>
+
+        <p>
+            Save & access<br>
+            notes easily
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="icon"></div>
+
+        <h3>Attendance and Timetable Tracker</h3>
+
+        <p>
+            Track classes &<br>
+            attendance daily
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="icon"></div>
+
+        <h3>Lost and Found with Photo</h3>
+
+        <p>
+            Post & find lost<br>
+            items quickly
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="icon"></div>
+
+        <h3>Campus Map Indoor Navigation</h3>
+
+        <p>
+            Find classrooms &<br>
+            halls instantly
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="icon"></div>
+
+        <h3>Project Hub & Community Events</h3>
+
+        <p>
+            Collaborate &<br>
+            join events
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- APP PREVIEW -->
+<h2 class="section-title">
+    APP PREVIEW
+</h2>
+
+<section class="preview">
+
+    <!-- PHONE 1 -->
+    <div class="phone">
+
+        <div class="phone-top">
+            Notes Library
+        </div>
+
+        <div class="phone-content">
+
+            <div class="search">
+                 Search
+            </div>
+
+            <div class="item">
+                 DBMS Notes - Chapter 3.pdf
+            </div>
+
+            <div class="item green">
+                 Java Basics - Notes
+            </div>
+
+            <div class="item blue">
+                 OS Summary
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHONE 2 -->
+    <div class="phone">
+
+        <div class="phone-top">
+            Attendance & Timetable
+        </div>
+
+        <div class="phone-content">
+
+            <h3>Mon, 15 Sept</h3>
+
+            <div class="item green">
+                09:00DPMS - Room 101
+            </div>
+
+            <div class="item blue">
+                10:00JAVA - Lab 2
+            </div>
+
+            <div class="item">
+                11:00OS - Room 203
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHONE 3 -->
+    <div class="phone">
+
+        <div class="phone-top">
+            Lost & Found
+        </div>
+
+        <div class="phone-content">
+
+            <div style="font-size:90px;text-align:center;margin:30px;">
+                
+            </div>
+
+            <h3>Blue Water Bottle</h3>
+
+            <p style="margin-top:15px;">
+                Found near Library
+            </p>
+
+            <div class="item green">
+                2 hrs ago • Claim
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHONE 4 -->
+    <div class="phone">
+
+        <div class="phone-top">
+            Campus Map
+        </div>
+
+        <div class="phone-content">
+
+            <div class="map"></div>
+
+            <p style="margin-top:15px;">
+                Library → B-Block → Cafeteria
+            </p>
+
+            <div class="item blue">
+                You are here: Main Gate
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHONE 5 -->
+    <div class="phone">
+
+        <div class="phone-top">
+            Project Hub & Events
+        </div>
+
+        <div class="phone-content">
+
+            <div class="search">
+                🔍 Search
+            </div>
+
+            <h3>Hackathon 2026</h3>
+
+            <p style="margin-top:10px;">
+                22 September
+            </p>
+
+            <div class="item green">
+                ✓ Register
+            </div>
+
+            <div class="item">
+                Project Team Setup
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-left">
+        Lokesh Beniwal
+      Dezyne Ecole College<br>
+        BCA 1st Semester
+    </div>
+
+    <div class="date">
+        15 September 2026
+    </div>
+
+    <div class="footer-right">
+    </div>
+
+</footer>
+
+</body>
+</html>
